@@ -5,8 +5,12 @@ export default {
     extend: {
       colors: {
         dark: "#1A1A1A",
+        "dark-10l": "#313131",
+
         light: "#F1F0E2",
-        accent: "#ACBFA4",
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
