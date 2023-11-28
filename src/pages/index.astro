@@ -2,10 +2,16 @@
 import Layout from "@layouts/Layout.astro";
 
 import InfoBar from "@components/InfoBar.astro";
+import About from "@components/About.astro";
+import Interests from "@components/Interests.astro";
 ---
 
 <Layout>
   <main>
     <InfoBar />
+    <div class="p-1 flex flex-col gap-2" id="view-1">
+      <About />
+      <Interests />
+    </div>
   </main>
 </Layout>

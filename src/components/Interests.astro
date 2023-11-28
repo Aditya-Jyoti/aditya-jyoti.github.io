@@ -1,0 +1,89 @@
+---
+const interestClass =
+  "p-2 text-lg border-2 border-dark-10l text-center transition-transform ease-in-out duration-300";
+
+const interestSelected = "bg-dark-20d scale-105";
+---
+
+<div>
+  <span class="text-2xl">Interests</span>
+  <div class="border-t-2 border-dark-10l my-1 mb-2 w-[15%]"></div>
+  <div class="p-1">
+    <span>I am also quite an interesting fellow...</span>
+  </div>
+  <div class="mt-2 grid grid-cols-5">
+    <div class="grid grid-rows-5 col-span-2">
+      <span
+        class=`${interestClass} ${interestSelected} selected-tag`
+        id="coding-tag"
+        data-image="coding-img">Coding</span
+      >
+      <span class={interestClass} id="robotics-tag" data-image="robotics-img"
+        >Robotics</span
+      >
+      <span class={interestClass} id="chess-tag" data-image="chess-img"
+        >Chess</span
+      >
+      <span class={interestClass} id="elocution-tag" data-image="elocution-img"
+        >Elocution</span
+      >
+      <span class={interestClass} id="music-tag" data-image="music-img"
+        >Music</span
+      >
+    </div>
+    <div class="col-span-3 border-2 border-dark-10l p-2">
+      <img
+        id="coding-img"
+        src="/coding.jpg"
+        alt="Coding"
+        class="h-full w-full selected-img"
+      />
+      <img
+        id="robotics-img"
+        src="/robotics.jpg"
+        alt="Robotics"
+        class="h-full w-full hidden"
+      />
+      <img
+        id="chess-img"
+        src="/chess.jpg"
+        alt="Chess"
+        class="h-full w-full hidden"
+      />
+      <img
+        id="elocution-img"
+        src="/elocution.jpg"
+        alt="Elocution"
+        class="h-full w-full hidden"
+      />
+      <img
+        id="music-img"
+        src="/music.jpg"
+        alt="Music"
+        class="h-full w-full hidden"
+      />
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ interestSelected }}>
+  document.querySelectorAll(".grid-rows-5 span").forEach((tag) => {
+    tag.addEventListener("click", () => {
+      const imageId = tag.getAttribute("data-image");
+
+      const selectedTag = document.querySelector(".selected-tag");
+      const selectedImg = document.querySelector(".selected-img");
+
+      selectedTag.classList.remove(
+        "selected-tag",
+        ...interestSelected.split(" ")
+      );
+      tag.classList.add("selected-tag", ...interestSelected.split(" "));
+
+      selectedImg.classList.add("hidden");
+      selectedImg.classList.remove("selected-img");
+      document.getElementById(imageId).classList.remove("hidden");
+      document.getElementById(imageId).classList.add("selected-img");
+    });
+  });
+</script>
