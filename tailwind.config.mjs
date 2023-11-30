@@ -6,7 +6,10 @@ export default {
       colors: {
         dark: "#1A1A1A",
         "dark-10l": "#313131",
-        "dark-20d": "#151515",
+        "dark-25l": "#515151",
+        "dark-75l": "#C6C6C6",
+        
+        "dark-40d": "#101010",
 
         light: "#F1F0E2",
       },
@@ -15,5 +18,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
