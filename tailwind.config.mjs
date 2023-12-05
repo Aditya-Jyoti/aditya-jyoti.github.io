@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         "dark-05": "#1A1A1A",
+        "dark-12": "#1F1F1F",
         "dark-15": "#262626",
         "dark-25": "#404040",
         "dark-35": "#595959",
@@ -20,5 +21,5 @@ export default {
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [],
 };
